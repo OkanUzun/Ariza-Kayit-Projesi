@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Arıza Kaydı</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="MainTable">
+            <tr>
+                <td colspan="2" class="auto-style1">
+
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Banner.jpg" Width="100%" />
+
+                    <asp:Label ID="Hosgeldin" runat="server" CssClass="saga_koy" Visible="False"></asp:Label>
+
+                    <asp:LinkButton ID="Giris" runat="server" CssClass="saga_koy" PostBackUrl="~/Anasayfa.aspx">Giris Sayfasına Dön</asp:LinkButton>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="MainLeftTd">
+
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Font-Bold="True" Font-Size="Large">
+                        <Items>
+                            <asp:MenuItem Text="Anasayfa" Value="Anasayfa" NavigateUrl="~/Anasayfa.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Hakkında" Value="Hakkında" NavigateUrl="~/Hakkında.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="İletişim" Value="İletişim" NavigateUrl="~/Iletisim.aspx"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="MainLeftTd">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="MainRightTd">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="MainTableFooter" colspan="2">
+
+                    CopyRight 2009-2015 Tamir Dünyasi Elektronik Hizmetler Tic. A.Ş Her Hakkı Saklıdır<br />
+
+                </td>
+            </tr>
+
+            
+        </table>
+        
+    
+    </form>
+</body>
+</html>
